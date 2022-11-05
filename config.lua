@@ -43,6 +43,46 @@ Config.MenuItems = {
 						event = 'walkstyles:client:angry',
 						shouldClose = true
 					},
+					{
+						id = 'war_veteran',
+						title = 'Veteran',
+						icon = 'person-walking',
+						type = 'client',
+						event = 'walkstyles:client:war_veteran',
+						shouldClose = true
+					},
+					{
+						id = 'gold_panner',
+						title = 'Gold Panner',
+						icon = 'person-walking',
+						type = 'client',
+						event = 'walkstyles:client:gold_panner',
+						shouldClose = true
+					},
+					{
+						id = 'lost_Man',
+						title = 'Lost',
+						icon = 'person-walking',
+						type = 'client',
+						event = 'walkstyles:client:lost_Man',
+						shouldClose = true
+					},
+					{
+						id = 'murfree',
+						title = 'Murfree',
+						icon = 'person-walking',
+						type = 'client',
+						event = 'walkstyles:client:murfree',
+						shouldClose = true
+					},
+					{
+						id = 'primate',
+						title = 'Primate',
+						icon = 'person-walking',
+						type = 'client',
+						event = 'walkstyles:client:primate',
+						shouldClose = true
+					},
 				}
 			},
         },

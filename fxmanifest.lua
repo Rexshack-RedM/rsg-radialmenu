@@ -26,4 +26,9 @@ files {
     'html/js/RadialMenu.js',
 }
 
+dependencies {
+	'qr-core',
+	'rsg-essentials'
+}
+
 lua54 'yes'

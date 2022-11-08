@@ -15,6 +15,14 @@ Config.MenuItems = {
         title = 'Horse',
         icon = 'horse-head',
         items = {
+			{
+				id = 'horselantern',
+				title = 'Horse Lantern',
+				icon = 'lightbulb',
+				type = 'client',
+				event = 'rsg-stable:client:equipHorseLantern',
+				shouldClose = true
+			},
         },
     },    
     [3] = {

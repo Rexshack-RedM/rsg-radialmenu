@@ -156,6 +156,14 @@ Config.MenuItems = {
 					},
 				}
 			},
+			{
+				id = 'contraband',
+				title = 'Contraband',
+				icon = 'skull-crossbones',
+				type = 'command',
+				event = 'sellcontraband',
+				shouldClose = true
+			},
         },
     },
 }

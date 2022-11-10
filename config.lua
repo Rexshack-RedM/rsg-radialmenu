@@ -171,22 +171,85 @@ Config.MenuItems = {
 Config.JobInteractions = {
     ["ambulance"] = {
         {
-            id = 'emsexample1',
+            id = 'statuscheck',
             title = 'Check Health Status',
             icon = 'heart-pulse',
             type = 'client',
             event = 'hospital:client:CheckStatus',
             shouldClose = true
-        },
+        },{
+            id = 'revivep',
+            title = 'Revive',
+            icon = 'user-doctor',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer',
+            shouldClose = true
+        },{
+            id = 'treatwounds',
+            title = 'Heal wounds',
+            icon = 'bandage',
+            type = 'client',
+            event = 'hospital:client:TreatWounds',
+            shouldClose = true
+        }, {
+            id = 'escort',
+            title = 'Escort',
+            icon = 'user-group',
+            type = 'client',
+            event = 'police:client:EscortPlayer',
+            shouldClose = true
+        }
     },
     ["police"] = {
-		{
-			id = 'copexample1',
-			title = 'Cuff',
-			icon = 'user-lock',
-			type = 'client',
-			event = 'police:client:CuffPlayerSoft',
-			shouldClose = true
-		}, 
+                {
+                    id = 'handcuff',
+                    title = 'Cuff',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'police:client:CuffPlayerSoft',
+                    shouldClose = true
+                }, {                    
+                    id = 'statuscheck',
+                    title = 'Check Health Status',
+                    icon = 'heart-pulse',
+                    type = 'client',
+                    event = 'hospital:client:CheckStatus',
+                    shouldClose = true
+                }, {
+                    id = 'checkstatus',
+                    title = 'Check status',
+                    icon = 'question',
+                    type = 'client',
+                    event = 'police:client:CheckStatus',
+                    shouldClose = true
+                },{
+                    id = 'revivep',
+                    title = 'Revive',
+                    icon = 'user-doctor',
+                    type = 'client',
+                    event = 'hospital:client:RevivePlayer',
+                    shouldClose = true
+                },{
+                    id = 'escort',
+                    title = 'Escort',
+                    icon = 'user-group',
+                    type = 'client',
+                    event = 'police:client:EscortPlayer',
+                    shouldClose = true
+                }, {
+                    id = 'searchplayer',
+                    title = 'Search',
+                    icon = 'magnifying-glass',
+                    type = 'client',
+                    event = 'police:client:SearchPlayer',
+                    shouldClose = true
+                }, {
+                    id = 'jailplayer',
+                    title = 'Jail',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'police:client:JailPlayer',
+                    shouldClose = true
+                }
     },
 }

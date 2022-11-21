@@ -250,6 +250,13 @@ Config.JobInteractions = {
                     type = 'client',
                     event = 'police:client:JailPlayer',
                     shouldClose = true
-                }
+                }, {
+                    id = 'lawbadge',
+                    title = 'Badge On/Off',
+                    icon = 'id-badge',
+                    type = 'command',
+                    event = 'lawbadge',
+                    shouldClose = true
+                }, 
     },
 }

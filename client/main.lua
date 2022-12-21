@@ -44,7 +44,7 @@ local function RemoveOption(id)
 end
 
 local function SetupJobMenu()
-	local PlayerData = QRCore.Functions.GetPlayerData()
+    local PlayerData = QRCore.Functions.GetPlayerData()
     local JobMenu = {
         id = 'jobinteractions',
         title = 'Work',
@@ -84,7 +84,7 @@ local function selectOption(t, t2)
 end
 
 local function IsPoliceOrEMS()
-	local PlayerData = QRCore.Functions.GetPlayerData()
+    local PlayerData = QRCore.Functions.GetPlayerData()
     return (PlayerData.job.name == "police" or PlayerData.job.name == "ambulance")
 end
 

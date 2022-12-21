@@ -6,7 +6,7 @@ description 'qr-radialmenu'
 
 client_scripts {
     'client/main.lua',
-	'client/walkstyles.lua',
+    'client/walkstyles.lua',
 }
 
 server_scripts {
@@ -27,8 +27,8 @@ files {
 }
 
 dependencies {
-	'qr-core',
-	'rsg-essentials'
+    'qr-core',
+    'rsg-essentials'
 }
 
 lua54 'yes'

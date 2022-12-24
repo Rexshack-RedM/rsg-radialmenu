@@ -1,4 +1,4 @@
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 local inRadialMenu = false
 local jobIndex = nil
 local vehicleIndex = nil
@@ -44,7 +44,7 @@ local function RemoveOption(id)
 end
 
 local function SetupJobMenu()
-    local PlayerData = QRCore.Functions.GetPlayerData()
+    local PlayerData = RSGCore.Functions.GetPlayerData()
     local JobMenu = {
         id = 'jobinteractions',
         title = 'Work',
@@ -84,12 +84,12 @@ local function selectOption(t, t2)
 end
 
 local function IsPoliceOrEMS()
-    local PlayerData = QRCore.Functions.GetPlayerData()
+    local PlayerData = RSGCore.Functions.GetPlayerData()
     return (PlayerData.job.name == "police" or PlayerData.job.name == "ambulance")
 end
 
 local function IsDowned()
-    return (QRCore.Functions.GetPlayerData().metadata["isdead"] or QRCore.Functions.GetPlayerData().metadata["inlaststand"])
+    return (RSGCore.Functions.GetPlayerData().metadata["isdead"] or RSGCore.Functions.GetPlayerData().metadata["inlaststand"])
 end
 
 local function SetupRadialMenu()
@@ -139,7 +139,7 @@ end
 CreateThread(function()
     while true do
         Citizen.Wait(7)
-if IsControlJustPressed(0, QRCore.Shared.Keybinds['F6']) then
+if IsControlJustPressed(0, RSGCore.Shared.Keybinds['F6']) then
         setRadialState(true, true)
         SetCursorLocation(0.5, 0.5)
         end
@@ -148,7 +148,7 @@ end)
 
 -- Sets the metadata when the player spawns
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    PlayerData = QRCore.Functions.GetPlayerData().job
+    PlayerData = RSGCore.Functions.GetPlayerData().job
 end)
 
 -- Sets the playerdata to an empty table when the player has quit or did /logout
@@ -162,7 +162,7 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
 end)
 
 RegisterNetEvent('rsg-radialmenu:client:noPlayers', function()
-    QRCore.Functions.Notify('No One Nearby', 'error')
+    RSGCore.Functions.Notify('No One Nearby', 'error')
 end)
 
 -- NUI Callbacks

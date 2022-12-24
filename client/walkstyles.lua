@@ -1,6 +1,6 @@
 -- https://github.com/femga/rdr3_discoveries/blob/a4b4bcd5a3006b0c1434b03e4095d038164932f7/discoveredNatives/discovered_natives_by_community
 
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 
 -- normal walkstyle
 RegisterNetEvent('walkstyles:client:normal')

@@ -193,34 +193,20 @@ Config.MenuItems = {
 }
 
 Config.JobInteractions = {
-    ["ambulance"] = {
+    ["medic"] = {
         {
-            id = 'statuscheck',
-            title = 'Check Health Status',
-            icon = 'heart-pulse',
-            type = 'client',
-            event = 'hospital:client:CheckStatus',
-            shouldClose = true
-        },{
             id = 'revivep',
             title = 'Revive',
             icon = 'user-doctor',
             type = 'client',
-            event = 'hospital:client:RevivePlayer',
+            event = 'rsg-medic:client:RevivePlayer',
             shouldClose = true
         },{
             id = 'treatwounds',
             title = 'Heal wounds',
             icon = 'bandage',
             type = 'client',
-            event = 'hospital:client:TreatWounds',
-            shouldClose = true
-        }, {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
-            type = 'client',
-            event = 'police:client:EscortPlayer',
+            event = 'rsg-medic:client:TreatWounds',
             shouldClose = true
         }
     },
@@ -232,26 +218,12 @@ Config.JobInteractions = {
             type = 'client',
             event = 'police:client:CuffPlayerSoft',
             shouldClose = true
-        }, {                    
-            id = 'statuscheck',
-            title = 'Check Health Status',
-            icon = 'heart-pulse',
-            type = 'client',
-            event = 'hospital:client:CheckStatus',
-            shouldClose = true
-        }, {
+        },{
             id = 'checkstatus',
             title = 'Check status',
             icon = 'question',
             type = 'client',
             event = 'police:client:CheckStatus',
-            shouldClose = true
-        },{
-            id = 'revivep',
-            title = 'Revive',
-            icon = 'user-doctor',
-            type = 'client',
-            event = 'hospital:client:RevivePlayer',
             shouldClose = true
         },{
             id = 'escort',

@@ -20,23 +20,7 @@ Config.MenuItems = {
                 title = 'Horse Lantern',
                 icon = 'lightbulb',
                 type = 'client',
-                event = 'rsg-stable:client:equipHorseLantern',
-                shouldClose = true
-            },
-            {
-                id = 'callhorse',
-                title = 'Call Horse',
-                icon = 'horse-head',
-                type = 'client',
-                event = 'rsg-stable:client:callHorse',
-                shouldClose = true
-            },
-            {
-                id = 'fleehorse',
-                title = 'Flee Horse',
-                icon = 'horse-head',
-                type = 'client',
-                event = 'rsg-stable:client:fleeHorse',
+                event = 'rsg-horses:client:equipHorseLantern',
                 shouldClose = true
             },
             {
@@ -44,7 +28,7 @@ Config.MenuItems = {
                 title = 'Inventory',
                 icon = 'box',
                 type = 'client',
-                event = 'rsg-stable:client:inventoryHorse',
+                event = 'rsg-horses:client:inventoryHorse',
                 shouldClose = true
             },
         },

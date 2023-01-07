@@ -172,6 +172,14 @@ Config.MenuItems = {
                 event = 'sellcontraband',
                 shouldClose = true
             },
+            {
+                id = 'pvptoggle',
+                title = 'Toggle PVP on/off',
+                icon = 'hand-holding-hand',
+                type = 'client',
+                event = 'rsg-pvp:client:pvpToggle',
+                shouldClose = true
+            },
         },
     },
 }

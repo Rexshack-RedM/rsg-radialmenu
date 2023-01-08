@@ -180,6 +180,14 @@ Config.MenuItems = {
                 event = 'rsg-pvp:client:pvpToggle',
                 shouldClose = true
             },
+            {
+                id = 'billing',
+                title = 'Billing',
+                icon = 'file-invoice-dollar',
+                type = 'client',
+                event = 'rsg-billing:client:billingMenu',
+                shouldClose = true
+            },
         },
     },
 }

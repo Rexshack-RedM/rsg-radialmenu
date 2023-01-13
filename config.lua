@@ -235,6 +235,38 @@ Config.MenuItems = {
                 event = 'shirt',
                 shouldClose = true
             },
+            {
+                id = 'onoffgunbelt',
+                title = 'Gun Belt',
+                icon = 'gun',
+                type = 'command',
+                event = 'gunbelt',
+                shouldClose = true
+            },
+            {
+                id = 'onoffmask',
+                title = 'Mask',
+                icon = 'masks-theater',
+                type = 'command',
+                event = 'mask',
+                shouldClose = true
+            },
+            {
+                id = 'onoffcoat',
+                title = 'Coat',
+                icon = 'vest-patches',
+                type = 'command',
+                event = 'coat',
+                shouldClose = true
+            },
+            {
+                id = 'onoffclosedcoat',
+                title = 'Closed Coat',
+                icon = 'vest-patches',
+                type = 'command',
+                event = 'closedcoat',
+                shouldClose = true
+            },
         },
     },
 }

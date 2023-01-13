@@ -195,46 +195,46 @@ Config.MenuItems = {
         title = 'Clothing',
         icon = 'shirt',
         items = {
-			{
-				id = 'onoffhat',
-				title = 'Hat',
-				icon = 'hat-cowboy',
-				type = 'command',
-				event = 'hat',
-				shouldClose = true
-			},
-			{
-				id = 'onoffvest',
-				title = 'Vest',
-				icon = 'vest',
-				type = 'command',
-				event = 'vest',
-				shouldClose = true
-			},
-			{
-				id = 'onoffboots',
-				title = 'Boots',
-				icon = 'shoe-prints',
-				type = 'command',
-				event = 'boots',
-				shouldClose = true
-			},
-			{
-				id = 'onoffpants',
-				title = 'Pants',
-				icon = 'circle-user',
-				type = 'command',
-				event = 'pants',
-				shouldClose = true
-			},
-			{
-				id = 'onoffshirt',
-				title = 'Shirt',
-				icon = 'shirt',
-				type = 'command',
-				event = 'shirt',
-				shouldClose = true
-			},
+            {
+                id = 'onoffhat',
+                title = 'Hat',
+                icon = 'hat-cowboy',
+                type = 'command',
+                event = 'hat',
+                shouldClose = true
+            },
+            {
+                id = 'onoffvest',
+                title = 'Vest',
+                icon = 'vest',
+                type = 'command',
+                event = 'vest',
+                shouldClose = true
+            },
+            {
+                id = 'onoffboots',
+                title = 'Boots',
+                icon = 'shoe-prints',
+                type = 'command',
+                event = 'boots',
+                shouldClose = true
+            },
+            {
+                id = 'onoffpants',
+                title = 'Pants',
+                icon = 'circle-user',
+                type = 'command',
+                event = 'pants',
+                shouldClose = true
+            },
+            {
+                id = 'onoffshirt',
+                title = 'Shirt',
+                icon = 'shirt',
+                type = 'command',
+                event = 'shirt',
+                shouldClose = true
+            },
         },
     },
 }

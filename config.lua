@@ -334,4 +334,38 @@ Config.JobInteractions = {
             shouldClose = true
         }, 
     },
+    ["horsetrainer"] = {
+        {
+            id = 'starttraining',
+            title = 'Toggle Training On/Off',
+            icon = 'horse-head',
+            type = 'client',
+            event = 'rsg-horsetrainer:client:startTraining',
+            shouldClose = true
+        },
+        {
+            id = 'trainerbrush',
+            title = 'Trainer Brush',
+            icon = 'horse-head',
+            type = 'client',
+            event = 'rsg-horsetrainer:client:brushHorse',
+            shouldClose = true
+        },
+        {
+            id = 'trainercarrot',
+            title = 'Trainer Carrot',
+            icon = 'horse-head',
+            type = 'client',
+            event = 'rsg-horsetrainer:client:feedHorse',
+            shouldClose = true
+        },
+        {
+            id = 'checkhorsexp',
+            title = 'Check Horse EXP',
+            icon = 'horse-head',
+            type = 'client',
+            event = 'rsg-horsetrainer:client:checkHorseEXP',
+            shouldClose = true
+        }
+    },
 }

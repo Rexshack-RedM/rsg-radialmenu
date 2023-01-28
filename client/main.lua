@@ -83,38 +83,6 @@ local function selectOption(t, t2)
     return false
 end
 
-local function IsPoliceOrEMS()
-    local PlayerData = RSGCore.Functions.GetPlayerData()
-    return (PlayerData.job.name == "police" or PlayerData.job.name == "ambulance")
-end
-
-local function IsDowned()
-    return (RSGCore.Functions.GetPlayerData().metadata["isdead"] or RSGCore.Functions.GetPlayerData().metadata["inlaststand"])
-end
-
-local function SetupRadialMenu()
-    FinalMenuItems = {}
-    if (IsDowned() and IsPoliceOrEMS()) then
-            FinalMenuItems = {
-                [1] = {
-                    id = 'emergencybutton2',
-                    title = Lang:t("options.emergency_button"),
-                    icon = 'exclamation-circle',
-                    type = 'client',
-                    event = 'police:client:SendPoliceEmergencyAlert',
-                    shouldClose = true,
-                },
-            }
-    else
-        SetupSubItems()
-        FinalMenuItems = deepcopy(Config.MenuItems)
-        for _, v in pairs(DynamicMenuItems) do
-            FinalMenuItems[#FinalMenuItems+1] = v
-        end
-
-    end
-end
-
 local function setRadialState(bool, sendMessage, delay)
 
     if bool then

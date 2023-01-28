@@ -176,5 +176,13 @@ RegisterNetEvent('rsg-radialmenu:client:SendPoliceEmergencyAlert', function()
     TriggerServerEvent('police:server:policeAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
 end)
 
+-- medic emergency button pressed
+RegisterNetEvent('rsg-radialmenu:client:SendMedicEmergencyAlert', function()
+    local Player = RSGCore.Functions.GetPlayerData()
+    local firstname = Player.charinfo.firstname
+    local lastname = Player.charinfo.lastname
+    TriggerServerEvent('rsg-medic:server:medicAlert', 'Medic '..firstname..' '..lastname..' emergency button pressed!')
+end)
+
 exports('AddOption', AddOption)
 exports('RemoveOption', RemoveOption)

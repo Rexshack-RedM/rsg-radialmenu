@@ -219,6 +219,13 @@ Config.MenuItems = {
 Config.JobInteractions = {
     ["medic"] = {
         {
+            id = 'medicbutton',
+            title = 'Emergency Button',
+            icon = 'exclamation',
+            type = 'client',
+            event = 'rsg-radialmenu:client:SendMedicEmergencyAlert',
+            shouldClose = true
+        },{
             id = 'revivep',
             title = 'Revive',
             icon = 'user-doctor',

@@ -101,68 +101,13 @@ Config.MenuItems = {
                     },
                 }
             },
-            {     
+            {
                 id = 'emotes',
                 title = 'Emotes',
                 icon = 'hand',
-                items = {
-                    {
-                        id = 'point',
-                        title = 'Point',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'point',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'takenotes',
-                        title = 'Take Notes',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'takenotes',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'blowkiss',
-                        title = 'Blow Kiss',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'blowkiss',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'fancybow',
-                        title = 'Fancy Bow',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'fancybow',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'hatflick',
-                        title = 'Hat Flick',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'hatflick',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'hattip',
-                        title = 'Hat Tip',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'hattip',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'gentalwave',
-                        title = 'Gental Wave',
-                        icon = 'hand',
-                        type = 'command',
-                        event = 'gentalwave',
-                        shouldClose = true
-                    },
-                }
+                type = 'command',
+                event = 'em',
+                shouldClose = true
             },
             {
                 id = 'contraband',

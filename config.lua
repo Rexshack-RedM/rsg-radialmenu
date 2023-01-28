@@ -291,6 +291,13 @@ Config.JobInteractions = {
     },
     ["police"] = {
         {
+            id = 'policebutton',
+            title = 'Emergency Button',
+            icon = 'exclamation',
+            type = 'client',
+            event = 'rsg-radialmenu:client:SendPoliceEmergencyAlert',
+            shouldClose = true
+        },{
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',

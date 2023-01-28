@@ -83,6 +83,15 @@ local function selectOption(t, t2)
     return false
 end
 
+local function SetupRadialMenu()
+    FinalMenuItems = {}
+    SetupSubItems()
+    FinalMenuItems = deepcopy(Config.MenuItems)
+    for _, v in pairs(DynamicMenuItems) do
+        FinalMenuItems[#FinalMenuItems+1] = v
+    end
+end
+
 local function setRadialState(bool, sendMessage, delay)
 
     if bool then
@@ -157,6 +166,14 @@ RegisterNUICallback('selectItem', function(inData, cb)
         end
     end
     cb('ok')
+end)
+
+-- police emergency button pressed
+RegisterNetEvent('rsg-radialmenu:client:SendPoliceEmergencyAlert', function()
+    local Player = RSGCore.Functions.GetPlayerData()
+    local firstname = Player.charinfo.firstname
+    local lastname = Player.charinfo.lastname
+    TriggerServerEvent('police:server:policeAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
 end)
 
 exports('AddOption', AddOption)

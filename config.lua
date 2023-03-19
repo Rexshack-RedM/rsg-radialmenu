@@ -133,6 +133,14 @@ Config.MenuItems = {
                 event = 'rsg-billing:client:billingMenu',
                 shouldClose = true
             },
+            {
+                id= 'adressbook',
+                title = 'Adress book',
+                icon = 'address-book',
+                type = 'client',
+                event = 'rsg-telegram:client:OpenAddressbook',
+                shouldClose = true
+            },
         },
     },
     [4] = {

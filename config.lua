@@ -280,10 +280,17 @@ Config.JobInteractions = {
             shouldClose = true
         }, {
             id = 'searchplayer',
-            title = 'Search',
+            title = 'Search Player',
             icon = 'magnifying-glass',
             type = 'client',
             event = 'police:client:SearchPlayer',
+            shouldClose = true
+        }, {
+            id = 'searchhorse',
+            title = 'Search Horse',
+            icon = 'magnifying-glass',
+            type = 'client',
+            event = 'police:client:SearchHorse',
             shouldClose = true
         }, {
             id = 'jailplayer',

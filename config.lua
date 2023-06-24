@@ -141,6 +141,14 @@ Config.MenuItems = {
                 event = 'rsg-telegram:client:OpenAddressbook',
                 shouldClose = true
             },
+            {
+                id = 'stealplayer',
+                title = 'Rob',
+                icon = 'mask',
+                type = 'client',
+                event = 'rsg-looting:client:RobPlayer',
+                shouldClose = true
+            },
         },
     },
     [4] = {

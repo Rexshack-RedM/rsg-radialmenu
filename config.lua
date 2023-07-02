@@ -157,6 +157,22 @@ Config.MenuItems = {
         icon = 'shirt',
         items = {
             {
+                id = 'dress',
+                title = 'Dress',
+                icon = 'person-dress',
+                type = 'command',
+                event = 'dress',
+                shouldClose = true
+            },
+            {
+                id = 'undress',
+                title = 'Undress',
+                icon = 'person-half-dress',
+                type = 'command',
+                event = 'undress',
+                shouldClose = true
+            },
+            {
                 id = 'onoffhat',
                 title = 'Hat',
                 icon = 'hat-cowboy',

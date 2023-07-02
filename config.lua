@@ -175,7 +175,7 @@ Config.MenuItems = {
             {
                 id = 'onoffpants',
                 title = 'Pants',
-                icon = 'circle-user',
+                icon = 'socks',
                 type = 'command',
                 event = 'pants',
                 shouldClose = true

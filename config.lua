@@ -23,14 +23,6 @@ Config.MenuItems = {
                 event = 'rsg-horses:client:equipHorseLantern',
                 shouldClose = true
             },
-            {
-                id = 'horseinventory',
-                title = 'Inventory',
-                icon = 'box',
-                type = 'client',
-                event = 'rsg-horses:client:inventoryHorse',
-                shouldClose = true
-            },
         },
     },
     [3] = {

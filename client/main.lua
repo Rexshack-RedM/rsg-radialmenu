@@ -124,17 +124,17 @@ if IsControlJustPressed(0, RSGCore.Shared.Keybinds['F6']) then
 end)
 
 -- Sets the metadata when the player spawns
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', function()
     PlayerData = RSGCore.Functions.GetPlayerData().job
 end)
 
 -- Sets the playerdata to an empty table when the player has quit or did /logout
-RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
+RegisterNetEvent('RSGCore:Client:OnPlayerUnload', function()
     PlayerData = {}
 end)
 
 -- This will update all the PlayerData that doesn't get updated with a specific event other than this like the metadata
-RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
+RegisterNetEvent('RSGCore:Player:SetPlayerData', function(val)
     PlayerData = val
 end)
 

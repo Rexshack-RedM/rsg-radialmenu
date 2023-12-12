@@ -161,8 +161,8 @@ RegisterNUICallback('selectItem', function(inData, cb)
             TriggerServerEvent(data.event, data)
         elseif data.type == 'command' then
             ExecuteCommand(data.event)
-        elseif data.type == 'qbcommand' then
-            TriggerServerEvent('QBCore:CallCommand', data.event, data)
+        elseif data.type == 'rsgcommand' then
+            TriggerServerEvent('RSGCore:CallCommand', data.event, data)
         end
     end
     cb('ok')

@@ -239,12 +239,12 @@ Config.MenuItems = {
         },
     },
     [5] = {
-        id = 'loadskin',
-        title = 'Fix Character',
-        icon = 'recycle',
-        type = 'client',
-        event = 'rsg-appearance:LoadSkinClient',
-        shouldClose = true
+         id = 'loadskin',
+         title = 'Fix Character',
+         icon = 'recycle',
+         type = 'command',
+         event = 'loadskin',
+         shouldClose = true
     }
 }
 

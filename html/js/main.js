@@ -1,6 +1,6 @@
 'use strict';
 
-var QBRadialMenu = null;
+var RSGRadialMenu = null;
 
 $(document).ready(function(){
     window.addEventListener('message', function(event){
@@ -8,22 +8,22 @@ $(document).ready(function(){
             case "ui":
                 if (event.data.radial) {
                     createMenu(event.data.items)
-                    QBRadialMenu.open();
+                    RSGRadialMenu.open();
                 } else {
-                    QBRadialMenu.close(true);
+                    RSGRadialMenu.close(true);
                 }
         }
     });
 });
 
 function createMenu(items) {
-    QBRadialMenu = new RadialMenu({
+    RSGRadialMenu = new RadialMenu({
         parent      : document.body,
         size        : 375,
         menuItems   : items,
         onClick     : function(item) {
             if (item.shouldClose) {
-                QBRadialMenu.close(true);
+                RSGRadialMenu.close(true);
             }
             
             if (item.items == null && item.shouldClose != null) {
@@ -39,12 +39,12 @@ function createMenu(items) {
 $(document).on('keydown', function(e) {
     switch(e.key) {
         case "Escape":
-            QBRadialMenu.close();
+            RSGRadialMenu.close();
             break;
     }
 });
 
 // Close on any key up, hold/release support incase user changes keybind on the fivem side
 $(document).on('keyup', function(e) {
-    QBRadialMenu.close();
+    RSGRadialMenu.close();
 });

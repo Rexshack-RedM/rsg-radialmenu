@@ -139,7 +139,7 @@ RegisterNetEvent('RSGCore:Player:SetPlayerData', function(val)
 end)
 
 RegisterNetEvent('rsg-radialmenu:client:noPlayers', function()
-    RSGCore.Functions.Notify('No One Nearby', 'error')
+    lib.notify({ title = 'Error', description = 'No One Nearby', type = 'error', duration = 5000 })
 end)
 
 -- NUI Callbacks

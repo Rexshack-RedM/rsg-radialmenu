@@ -8,6 +8,14 @@ Config.MenuItems = {
         title = 'World',
         icon = 'globe',
         items = {
+            {
+                id = 'delcanoe',
+                title = 'Pick-Up Canoe',
+                icon = 'sailboat',
+                type = 'command',
+                event = 'delcanoe',
+                shouldClose = true
+            },
         },
     }, 
     [2] = {

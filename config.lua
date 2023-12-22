@@ -281,55 +281,34 @@ Config.JobInteractions = {
             shouldClose = true
         }
     },
-    ["police"] = {
+    ["vallaw"] = {
         {
             id = 'policebutton',
             title = 'Emergency Button',
             icon = 'exclamation',
             type = 'client',
-            event = 'rsg-radialmenu:client:SendPoliceEmergencyAlert',
+            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
             shouldClose = true
         },{
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',
             type = 'client',
-            event = 'police:client:CuffPlayerSoft',
-            shouldClose = true
-        },{
-            id = 'checkstatus',
-            title = 'Check status',
-            icon = 'question',
-            type = 'client',
-            event = 'police:client:CheckStatus',
+            event = 'rsg-lawman:client:cuffplayer',
             shouldClose = true
         },{
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
             type = 'client',
-            event = 'police:client:EscortPlayer',
-            shouldClose = true
-        }, {
-            id = 'searchplayer',
-            title = 'Search Player',
-            icon = 'magnifying-glass',
-            type = 'client',
-            event = 'police:client:SearchPlayer',
-            shouldClose = true
-        }, {
-            id = 'searchhorse',
-            title = 'Search Horse',
-            icon = 'magnifying-glass',
-            type = 'client',
-            event = 'police:client:SearchHorse',
+            event = 'rsg-lawman:client:escortplayer',
             shouldClose = true
         }, {
             id = 'jailplayer',
             title = 'Jail',
             icon = 'user-lock',
             type = 'client',
-            event = 'police:client:JailPlayer',
+            event = 'rsg-lawman:client:jailplayer',
             shouldClose = true
         }, {
             id = 'lawbadge',
@@ -338,7 +317,159 @@ Config.JobInteractions = {
             type = 'command',
             event = 'lawbadge',
             shouldClose = true
-        }, 
+        },
+    },
+    ["rholaw"] = {
+        {
+            id = 'policebutton',
+            title = 'Emergency Button',
+            icon = 'exclamation',
+            type = 'client',
+            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
+            shouldClose = true
+        },{
+            id = 'handcuff',
+            title = 'Cuff',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:cuffplayer',
+            shouldClose = true
+        },{
+            id = 'escort',
+            title = 'Escort',
+            icon = 'user-group',
+            type = 'client',
+            event = 'rsg-lawman:client:escortplayer',
+            shouldClose = true
+        }, {
+            id = 'jailplayer',
+            title = 'Jail',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:jailplayer',
+            shouldClose = true
+        }, {
+            id = 'lawbadge',
+            title = 'Badge On/Off',
+            icon = 'id-badge',
+            type = 'command',
+            event = 'lawbadge',
+            shouldClose = true
+        },
+    },
+    ["blklaw"] = {
+        {
+            id = 'policebutton',
+            title = 'Emergency Button',
+            icon = 'exclamation',
+            type = 'client',
+            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
+            shouldClose = true
+        },{
+            id = 'handcuff',
+            title = 'Cuff',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:cuffplayer',
+            shouldClose = true
+        },{
+            id = 'escort',
+            title = 'Escort',
+            icon = 'user-group',
+            type = 'client',
+            event = 'rsg-lawman:client:escortplayer',
+            shouldClose = true
+        }, {
+            id = 'jailplayer',
+            title = 'Jail',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:jailplayer',
+            shouldClose = true
+        }, {
+            id = 'lawbadge',
+            title = 'Badge On/Off',
+            icon = 'id-badge',
+            type = 'command',
+            event = 'lawbadge',
+            shouldClose = true
+        },
+    },
+    ["strlaw"] = {
+        {
+            id = 'policebutton',
+            title = 'Emergency Button',
+            icon = 'exclamation',
+            type = 'client',
+            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
+            shouldClose = true
+        },{
+            id = 'handcuff',
+            title = 'Cuff',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:cuffplayer',
+            shouldClose = true
+        },{
+            id = 'escort',
+            title = 'Escort',
+            icon = 'user-group',
+            type = 'client',
+            event = 'rsg-lawman:client:escortplayer',
+            shouldClose = true
+        }, {
+            id = 'jailplayer',
+            title = 'Jail',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:jailplayer',
+            shouldClose = true
+        }, {
+            id = 'lawbadge',
+            title = 'Badge On/Off',
+            icon = 'id-badge',
+            type = 'command',
+            event = 'lawbadge',
+            shouldClose = true
+        },
+    },
+    ["stdenlaw"] = {
+        {
+            id = 'policebutton',
+            title = 'Emergency Button',
+            icon = 'exclamation',
+            type = 'client',
+            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
+            shouldClose = true
+        },{
+            id = 'handcuff',
+            title = 'Cuff',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:cuffplayer',
+            shouldClose = true
+        },{
+            id = 'escort',
+            title = 'Escort',
+            icon = 'user-group',
+            type = 'client',
+            event = 'rsg-lawman:client:escortplayer',
+            shouldClose = true
+        }, {
+            id = 'jailplayer',
+            title = 'Jail',
+            icon = 'user-lock',
+            type = 'client',
+            event = 'rsg-lawman:client:jailplayer',
+            shouldClose = true
+        }, {
+            id = 'lawbadge',
+            title = 'Badge On/Off',
+            icon = 'id-badge',
+            type = 'command',
+            event = 'lawbadge',
+            shouldClose = true
+        },
     },
     ["horsetrainer"] = {
         {

@@ -169,12 +169,12 @@ RegisterNUICallback('selectItem', function(inData, cb)
 end)
 
 -- police emergency button pressed
-RegisterNetEvent('rsg-radialmenu:client:SendPoliceEmergencyAlert', function()
+RegisterNetEvent('rsg-radialmenu:client:SendLawmanEmergencyAlert', function()
     local Player = RSGCore.Functions.GetPlayerData()
     local firstname = Player.charinfo.firstname
     local lastname = Player.charinfo.lastname
     -- notify police
-    TriggerServerEvent('police:server:policeAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
+    TriggerServerEvent('rsg-lawman:client:lawmanAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
     -- notify medics
     TriggerServerEvent('rsg-medic:server:medicAlert', 'Medic '..firstname..' '..lastname..' emergency button pressed!')
 end)
@@ -187,7 +187,7 @@ RegisterNetEvent('rsg-radialmenu:client:SendMedicEmergencyAlert', function()
     -- notify medics
     TriggerServerEvent('rsg-medic:server:medicAlert', 'Medic '..firstname..' '..lastname..' emergency button pressed!')
     -- notify police
-    TriggerServerEvent('police:server:policeAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
+    TriggerServerEvent('rsg-lawman:client:lawmanAlert', 'Officer '..firstname..' '..lastname..' emergency button pressed!')
 end)
 
 exports('AddOption', AddOption)

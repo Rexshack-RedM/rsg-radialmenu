@@ -17,7 +17,7 @@ Config.MenuItems = {
                 shouldClose = true
             },
         },
-    }, 
+    },
     [2] = {
         id = 'horse',
         title = 'Horse',
@@ -50,48 +50,42 @@ Config.MenuItems = {
                         type = 'client',
                         event = 'walkstyles:client:normal',
                         shouldClose = true
-                    },
-                    {
+                    }, {
                         id = 'angry',
                         title = 'Angry',
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:angry',
                         shouldClose = true
-                    },
-                    {
+                    }, {
                         id = 'war_veteran',
                         title = 'Veteran',
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:war_veteran',
                         shouldClose = true
-                    },
-                    {
+                    }, {
                         id = 'gold_panner',
                         title = 'Gold Panner',
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:gold_panner',
                         shouldClose = true
-                    },
-                    {
+                    }, {
                         id = 'lost_Man',
                         title = 'Lost',
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:lost_Man',
                         shouldClose = true
-                    },
-                    {
+                    }, {
                         id = 'murfree',
                         title = 'Murfree',
                         icon = 'person-walking',
                         type = 'client',
                         event = 'walkstyles:client:murfree',
                         shouldClose = true
-                    },
-                    {
+                    }, {
                         id = 'primate',
                         title = 'Primate',
                         icon = 'person-walking',
@@ -108,40 +102,35 @@ Config.MenuItems = {
                 type = 'command',
                 event = 'em',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'contraband',
                 title = 'Contraband',
                 icon = 'skull-crossbones',
                 type = 'command',
                 event = 'sellcontraband',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'pvptoggle',
                 title = 'Toggle PVP on/off',
                 icon = 'hand-holding-hand',
                 type = 'client',
                 event = 'rsg-pvp:client:pvpToggle',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'billing',
                 title = 'Billing',
                 icon = 'file-invoice-dollar',
                 type = 'client',
                 event = 'rsg-billing:client:billingMenu',
                 shouldClose = true
-            },
-            {
+            }, {
                 id= 'adressbook',
                 title = 'Adress book',
                 icon = 'address-book',
                 type = 'client',
                 event = 'rsg-telegram:client:OpenAddressbook',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'stealplayer',
                 title = 'Rob',
                 icon = 'mask',
@@ -163,80 +152,70 @@ Config.MenuItems = {
                 type = 'command',
                 event = 'dress',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'undress',
                 title = 'Undress',
                 icon = 'person-half-dress',
                 type = 'command',
                 event = 'undress',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffhat',
                 title = 'Hat',
                 icon = 'hat-cowboy',
                 type = 'command',
                 event = 'hat',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffvest',
                 title = 'Vest',
                 icon = 'vest',
                 type = 'command',
                 event = 'vest',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffboots',
                 title = 'Boots',
                 icon = 'shoe-prints',
                 type = 'command',
                 event = 'boots',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffpants',
                 title = 'Pants',
                 icon = 'socks',
                 type = 'command',
                 event = 'pants',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffshirt',
                 title = 'Shirt',
                 icon = 'shirt',
                 type = 'command',
                 event = 'shirt',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffgunbelt',
                 title = 'Gun Belt',
                 icon = 'gun',
                 type = 'command',
                 event = 'gunbelt',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffmask',
                 title = 'Mask',
                 icon = 'masks-theater',
                 type = 'command',
                 event = 'mask',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffcoat',
                 title = 'Coat',
                 icon = 'vest-patches',
                 type = 'command',
                 event = 'coat',
                 shouldClose = true
-            },
-            {
+            }, {
                 id = 'onoffclosedcoat',
                 title = 'Closed Coat',
                 icon = 'vest-patches',
@@ -265,14 +244,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-radialmenu:client:SendMedicEmergencyAlert',
             shouldClose = true
-        },{
+        }, {
             id = 'revivep',
             title = 'Revive',
             icon = 'user-doctor',
             type = 'client',
             event = 'rsg-medic:client:RevivePlayer',
             shouldClose = true
-        },{
+        }, {
             id = 'treatwounds',
             title = 'Heal wounds',
             icon = 'bandage',
@@ -289,14 +268,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
             shouldClose = true
-        },{
+        }, {
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',
             type = 'client',
             event = 'rsg-lawman:client:cuffplayer',
             shouldClose = true
-        },{
+        }, {
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
@@ -327,14 +306,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
             shouldClose = true
-        },{
+        }, {
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',
             type = 'client',
             event = 'rsg-lawman:client:cuffplayer',
             shouldClose = true
-        },{
+        }, {
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
@@ -365,14 +344,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
             shouldClose = true
-        },{
+        }, {
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',
             type = 'client',
             event = 'rsg-lawman:client:cuffplayer',
             shouldClose = true
-        },{
+        }, {
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
@@ -403,14 +382,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
             shouldClose = true
-        },{
+        }, {
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',
             type = 'client',
             event = 'rsg-lawman:client:cuffplayer',
             shouldClose = true
-        },{
+        }, {
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
@@ -441,14 +420,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
             shouldClose = true
-        },{
+        }, {
             id = 'handcuff',
             title = 'Cuff',
             icon = 'user-lock',
             type = 'client',
             event = 'rsg-lawman:client:cuffplayer',
             shouldClose = true
-        },{
+        }, {
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
@@ -479,24 +458,21 @@ Config.JobInteractions = {
             type = 'client',
             event = 'rsg-horsetrainer:client:startTraining',
             shouldClose = true
-        },
-        {
+        }, {
             id = 'trainerbrush',
             title = 'Trainer Brush',
             icon = 'horse-head',
             type = 'client',
             event = 'rsg-horsetrainer:client:brushHorse',
             shouldClose = true
-        },
-        {
+        }, {
             id = 'trainercarrot',
             title = 'Trainer Carrot',
             icon = 'horse-head',
             type = 'client',
             event = 'rsg-horsetrainer:client:feedHorse',
             shouldClose = true
-        },
-        {
+        }, {
             id = 'checkhorsexp',
             title = 'Check Horse EXP',
             icon = 'horse-head',

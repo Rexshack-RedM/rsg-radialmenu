@@ -40,7 +40,7 @@ Config.MenuItems = {
         title = 'User',
         icon = 'user',
         items = {
-            {     
+            {
                 id = 'walkstyles',
                 title = 'Walk Styles',
                 icon = 'person-walking',

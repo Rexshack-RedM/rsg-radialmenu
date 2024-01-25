@@ -1,6 +1,8 @@
 Config = {}
 
+-- settings
 Config.EnableExtraMenu = false
+Config.Keybind = 'F6'
 
 Config.MenuItems = {
     [1] = {

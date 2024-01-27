@@ -140,6 +140,14 @@ Config.MenuItems = {
                 event = 'rsg-looting:client:RobPlayer',
                 shouldClose = true
             },
+            {
+                id = 'sethorsename',
+                title = 'sethorsename',
+                icon = 'globe',
+                type = 'command',
+                event = 'sethorsename',
+                shouldClose = true
+            },
         },
     },
     [4] = {

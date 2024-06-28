@@ -242,6 +242,14 @@ Config.MenuItems = {
          type = 'command',
          event = 'loadskin',
          shouldClose = true
+    },
+    [6] = {
+         id = 'playerinfo',
+         title = 'Your Info',
+         icon = 'book',
+         type = 'command',
+         event = 'info',
+         shouldClose = true
     }
 }
 

@@ -120,6 +120,14 @@ Config.MenuItems = {
                 event = 'sethorsename',
                 shouldClose = true
             },
+            {
+                id = 'searchplayer',
+                title = 'Search Player',
+                icon = 'magnifying-glass',
+                type = 'command',
+                event = 'searchplayer',
+                shouldClose = true
+            },
         },
     },
     [3] = {

@@ -101,7 +101,7 @@ Config.MenuItems = {
                 title = 'Toggle PVP on/off',
                 icon = 'hand-holding-hand',
                 type = 'client',
-                event = 'rsg-pvp:client:pvpToggle',
+                event = 'rsg-essentials:client:pvpToggle',
                 shouldClose = true
             }, 
             {

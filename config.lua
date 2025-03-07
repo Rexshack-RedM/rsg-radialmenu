@@ -3,6 +3,7 @@ Config = {}
 -- settings
 Config.EnableExtraMenu = false
 Config.Keybind = 'F6'
+Config.HoldToOpen  = true
 
 Config.MenuItems = {
     [1] = {

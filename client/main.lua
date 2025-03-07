@@ -114,28 +114,20 @@ end
 
 -- Main Open Event
 CreateThread(function()
+    local IsRadialJustActivated = Config.HoldToOpen
+        and function() return IsControlJustPressed(0, RSGCore.Shared.Keybinds[Config.Keybind]) end
+        or function() return IsControlJustReleased(0, RSGCore.Shared.Keybinds[Config.Keybind]) end
+
     while true do
         Citizen.Wait(7)
-        if IsControlJustPressed(0, RSGCore.Shared.Keybinds[Config.Keybind]) then
-            setRadialState(true, true)
-            SetCursorLocation(0.5, 0.5)
+        if IsRadialJustActivated() then
+            local PlayerData = RSGCore.Functions.GetPlayerData()
+            if not PlayerData.metadata['isdead'] then
+                setRadialState(true, true)
+                SetCursorLocation(0.5, 0.5)
+            end
         end
     end
-end)
-
--- Sets the metadata when the player spawns
-RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', function()
-    PlayerData = RSGCore.Functions.GetPlayerData().job
-end)
-
--- Sets the playerdata to an empty table when the player has quit or did /logout
-RegisterNetEvent('RSGCore:Client:OnPlayerUnload', function()
-    PlayerData = {}
-end)
-
--- This will update all the PlayerData that doesn't get updated with a specific event other than this like the metadata
-RegisterNetEvent('RSGCore:Player:SetPlayerData', function(val)
-    PlayerData = val
 end)
 
 RegisterNetEvent('rsg-radialmenu:client:noPlayers', function()
@@ -150,6 +142,12 @@ RegisterNUICallback('closeRadial', function(data, cb)
 end)
 
 RegisterNUICallback('selectItem', function(inData, cb)
+    local PlayerData = RSGCore.Functions.GetPlayerData()
+    if PlayerData.metadata['isdead'] then 
+        cb('ok')
+        return 
+    end
+
     local itemData = inData.itemData
     local found, action, data = selectOption(FinalMenuItems, itemData)
     if data and found then

@@ -1,524 +1,118 @@
+lib.locale()
+
 Config = {}
 
--- settings
-Config.EnableExtraMenu = false
-Config.Keybind = 'F6'
-Config.HoldToOpen = true
+---------------------------------------------------------------------
+-- Settings
+---------------------------------------------------------------------
+Config.Keybind            = 'F6'
+Config.HoldToOpen         = true  -- true: hold key, release to close | false: tap to open
+Config.EmergencyCooldown  = 60    -- seconds between emergency button presses
+Config.WalkstyleCooldown  = 2     -- seconds between walkstyle changes (server enforced)
 
+Config.LawJobs   = { vallaw = true, rholaw = true, blklaw = true, strlaw = true, stdenlaw = true }
+Config.MedicJobs = { medic = true }
+
+-- key = { clipset, motion type }  (server only accepts keys listed here)
+Config.Walkstyles = {
+    normal      = { 'default',     'normal' },
+    angry       = { 'default',     'angry'  },
+    war_veteran = { 'war_veteran', 'normal' },
+    gold_panner = { 'gold_panner', 'normal' },
+    lost_man    = { 'lost_Man',    'normal' },
+    murfree     = { 'murfree',     'normal' },
+    primate     = { 'primate',     'normal' },
+}
+
+---------------------------------------------------------------------
+-- Builders (keep the menu tables below short)
+---------------------------------------------------------------------
+local function cmd(id, title, icon, command)
+    return { id = id, title = title, icon = icon, type = 'command', event = command, shouldClose = true }
+end
+
+local function cl(id, title, icon, event)
+    return { id = id, title = title, icon = icon, type = 'client', event = event, shouldClose = true }
+end
+
+local function walk(key, title)
+    local item = cl('walk_' .. key, title, 'person-walking', 'rsg-radialmenu:client:setWalkstyle')
+    item.walkstyle = key
+    return item
+end
+
+---------------------------------------------------------------------
+-- Menu
+---------------------------------------------------------------------
 Config.MenuItems = {
-    [1] = {
-        id = 'horse',
-        title = 'Horse',
-        icon = 'horse-head',
+    {
+        id = 'horse', title = locale('menu_horse'), icon = 'horse-head',
         items = {
-            {
-                id = 'horselantern',
-                title = 'Horse Lantern',
-                icon = 'lightbulb',
-                type = 'client',
-                event = 'rsg-horses:client:equipHorseLantern',
-                shouldClose = true
-            },
+            cl('horselantern', locale('menu_horse_lantern'), 'lightbulb', 'rsg-horses:client:equipHorseLantern'),
+            cmd('sethorsename', locale('menu_horse_name'), 'signature', 'sethorsename'),
         },
     },
-    [2] = {
-        id = 'user',
-        title = 'User',
-        icon = 'user',
+    {
+        id = 'user', title = locale('menu_user'), icon = 'user',
         items = {
             {
-                id = 'walkstyles',
-                title = 'Walk Styles',
-                icon = 'person-walking',
+                id = 'walkstyles', title = locale('menu_walkstyles'), icon = 'person-walking',
                 items = {
-                    {
-                        id = 'normal',
-                        title = 'Normal',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:normal',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'angry',
-                        title = 'Angry',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:angry',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'war_veteran',
-                        title = 'Veteran',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:war_veteran',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'gold_panner',
-                        title = 'Gold Panner',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:gold_panner',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'lost_Man',
-                        title = 'Lost',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:lost_Man',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'murfree',
-                        title = 'Murfree',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:murfree',
-                        shouldClose = true
-                    },
-                    {
-                        id = 'primate',
-                        title = 'Primate',
-                        icon = 'person-walking',
-                        type = 'client',
-                        event = 'walkstyles:client:primate',
-                        shouldClose = true
-                    },
-                }
+                    walk('normal',      locale('walk_normal')),
+                    walk('angry',       locale('walk_angry')),
+                    walk('war_veteran', locale('walk_veteran')),
+                    walk('gold_panner', locale('walk_gold_panner')),
+                    walk('lost_man',    locale('walk_lost')),
+                    walk('murfree',     locale('walk_murfree')),
+                    walk('primate',     locale('walk_primate')),
+                },
             },
-            {
-                id = 'jobs',
-                title = 'Jobs',
-                icon = 'circle-user',
-                type = 'command',
-                event = 'myjobs',
-                shouldClose = true
-            },
-            {
-                id = 'pvptoggle',
-                title = 'Toggle PVP on/off',
-                icon = 'hand-holding-hand',
-                type = 'client',
-                event = 'rsg-essentials:client:pvpToggle',
-                shouldClose = true
-            }, 
-            {
-                id= 'adressbook',
-                title = 'Adress book',
-                icon = 'address-book',
-                type = 'client',
-                event = 'rsg-telegram:client:OpenAddressbook',
-                shouldClose = true
-            },
-            {
-                id = 'sethorsename',
-                title = 'sethorsename',
-                icon = 'globe',
-                type = 'command',
-                event = 'sethorsename',
-                shouldClose = true
-            },
-            {
-                id = 'searchplayer',
-                title = 'Search Player',
-                icon = 'magnifying-glass',
-                type = 'command',
-                event = 'searchplayer',
-                shouldClose = true
-            },
+            cmd('jobs',         locale('menu_jobs'),         'circle-user',       'myjobs'),
+            cl('pvptoggle',     locale('menu_pvp'),          'hand-holding-hand', 'rsg-essentials:client:pvpToggle'),
+            cl('addressbook',   locale('menu_addressbook'),  'address-book',      'rsg-telegram:client:OpenAddressbook'),
+            cmd('searchplayer', locale('menu_searchplayer'), 'magnifying-glass',  'searchplayer'),
         },
     },
-    [3] = {
-        id = 'clothing',
-        title = 'Clothing',
-        icon = 'shirt',
+    {
+        id = 'clothing', title = locale('menu_clothing'), icon = 'shirt',
         items = {
-            {
-                id = 'dress',
-                title = 'Dress',
-                icon = 'person-dress',
-                type = 'command',
-                event = 'dress',
-                shouldClose = true
-            },
-            {
-                id = 'undress',
-                title = 'Undress',
-                icon = 'person-half-dress',
-                type = 'command',
-                event = 'undress',
-                shouldClose = true
-            },
-            {
-                id = 'onoffhat',
-                title = 'Hat',
-                icon = 'hat-cowboy',
-                type = 'command',
-                event = 'hat',
-                shouldClose = true
-            },
-            {
-                id = 'onoffvest',
-                title = 'Vest',
-                icon = 'vest',
-                type = 'command',
-                event = 'vest',
-                shouldClose = true
-            },
-            {
-                id = 'onoffboots',
-                title = 'Boots',
-                icon = 'shoe-prints',
-                type = 'command',
-                event = 'boots',
-                shouldClose = true
-            },
-            {
-                id = 'onoffpants',
-                title = 'Pants',
-                icon = 'socks',
-                type = 'command',
-                event = 'pants',
-                shouldClose = true
-            },
-            {
-                id = 'onoffshirt',
-                title = 'Shirt',
-                icon = 'shirt',
-                type = 'command',
-                event = 'shirt',
-                shouldClose = true
-            },
-            {
-                id = 'onoffgunbelt',
-                title = 'Gun Belt',
-                icon = 'gun',
-                type = 'command',
-                event = 'gunbelt',
-                shouldClose = true
-            },
-            {
-                id = 'onoffmask',
-                title = 'Mask',
-                icon = 'masks-theater',
-                type = 'command',
-                event = 'mask',
-                shouldClose = true
-            },
-            {
-                id = 'onoffcoat',
-                title = 'Coat',
-                icon = 'vest-patches',
-                type = 'command',
-                event = 'coat',
-                shouldClose = true
-            },
-            {
-                id = 'onoffclosedcoat',
-                title = 'Closed Coat',
-                icon = 'vest-patches',
-                type = 'command',
-                event = 'closedcoat',
-                shouldClose = true
-            },
+            cmd('dress',           locale('cloth_dress'),       'person-dress',      'dress'),
+            cmd('undress',         locale('cloth_undress'),     'person-half-dress', 'undress'),
+            cmd('onoffhat',        locale('cloth_hat'),         'hat-cowboy',        'hat'),
+            cmd('onoffvest',       locale('cloth_vest'),        'vest',              'vest'),
+            cmd('onoffboots',      locale('cloth_boots'),       'shoe-prints',       'boots'),
+            cmd('onoffpants',      locale('cloth_pants'),       'socks',             'pants'),
+            cmd('onoffshirt',      locale('cloth_shirt'),       'shirt',             'shirt'),
+            cmd('onoffgunbelt',    locale('cloth_gunbelt'),     'gun',               'gunbelt'),
+            cmd('onoffmask',       locale('cloth_mask'),        'masks-theater',     'mask'),
+            cmd('onoffcoat',       locale('cloth_coat'),        'vest-patches',      'coat'),
+            cmd('onoffclosedcoat', locale('cloth_closed_coat'), 'vest-patches',      'closedcoat'),
         },
     },
-    [4] = {
-         id = 'loadskin',
-         title = 'Fix Character',
-         icon = 'recycle',
-         type = 'command',
-         event = 'loadskin',
-         shouldClose = true
-    },
-    [5] = {
-         id = 'playerinfo',
-         title = 'Your Info',
-         icon = 'book',
-         type = 'command',
-         event = 'info',
-         shouldClose = true
-    }
+    cmd('loadskin',   locale('menu_fix_character'), 'recycle', 'loadskin'),
+    cmd('playerinfo', locale('menu_your_info'),     'book',    'info'),
+}
+
+---------------------------------------------------------------------
+-- Job interactions
+---------------------------------------------------------------------
+local LawItems = {
+    cl('policebutton', locale('job_emergency'), 'exclamation', 'rsg-radialmenu:client:SendLawmanEmergencyAlert'),
+    cl('handcuff',     locale('law_cuff'),      'user-lock',   'rsg-lawman:client:cuffplayer'),
+    cl('escort',       locale('law_escort'),    'user-group',  'rsg-lawman:client:escortplayer'),
+    cl('jailplayer',   locale('law_jail'),      'user-lock',   'rsg-lawman:client:jailplayer'),
+    cmd('lawbadge',    locale('law_badge'),     'id-badge',    'lawbadge'),
+    cmd('lawmdt',      locale('law_mdt'),       'book-open',   'mdt'),
 }
 
 Config.JobInteractions = {
-    ['medic'] = {
-        {
-            id = 'medicbutton',
-            title = 'Emergency Button',
-            icon = 'exclamation',
-            type = 'client',
-            event = 'rsg-radialmenu:client:SendMedicEmergencyAlert',
-            shouldClose = true
-        },
-        {
-            id = 'revivep',
-            title = 'Revive',
-            icon = 'user-doctor',
-            type = 'client',
-            event = 'rsg-medic:client:RevivePlayer',
-            shouldClose = true
-        },
-        {
-            id = 'treatwounds',
-            title = 'Heal wounds',
-            icon = 'bandage',
-            type = 'client',
-            event = 'rsg-medic:client:TreatWounds',
-            shouldClose = true
-        }
-    },
-    ['vallaw'] = {
-        {
-            id = 'policebutton',
-            title = 'Emergency Button',
-            icon = 'exclamation',
-            type = 'client',
-            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
-            shouldClose = true
-        },
-        {
-            id = 'handcuff',
-            title = 'Cuff',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:cuffplayer',
-            shouldClose = true
-        },
-        {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
-            type = 'client',
-            event = 'rsg-lawman:client:escortplayer',
-            shouldClose = true
-        },
-        {
-            id = 'jailplayer',
-            title = 'Jail',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:jailplayer',
-            shouldClose = true
-        },
-        {
-            id = 'lawbadge',
-            title = 'Badge On/Off',
-            icon = 'id-badge',
-            type = 'command',
-            event = 'lawbadge',
-            shouldClose = true
-        },
-        {
-            id = 'lawmdt',
-            title = 'Law MDT',
-            icon = 'book-open',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        },
-    },
-    ['rholaw'] = {
-        {
-            id = 'policebutton',
-            title = 'Emergency Button',
-            icon = 'exclamation',
-            type = 'client',
-            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
-            shouldClose = true
-        },
-        {
-            id = 'handcuff',
-            title = 'Cuff',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:cuffplayer',
-            shouldClose = true
-        },
-        {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
-            type = 'client',
-            event = 'rsg-lawman:client:escortplayer',
-            shouldClose = true
-        },
-        {
-            id = 'jailplayer',
-            title = 'Jail',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:jailplayer',
-            shouldClose = true
-        },
-        {
-            id = 'lawbadge',
-            title = 'Badge On/Off',
-            icon = 'id-badge',
-            type = 'command',
-            event = 'lawbadge',
-            shouldClose = true
-        },
-        {
-            id = 'lawmdt',
-            title = 'Law MDT',
-            icon = 'book-open',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        },
-    },
-    ['blklaw'] = {
-        {
-            id = 'policebutton',
-            title = 'Emergency Button',
-            icon = 'exclamation',
-            type = 'client',
-            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
-            shouldClose = true
-        },
-        {
-            id = 'handcuff',
-            title = 'Cuff',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:cuffplayer',
-            shouldClose = true
-        },
-        {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
-            type = 'client',
-            event = 'rsg-lawman:client:escortplayer',
-            shouldClose = true
-        },
-        {
-            id = 'jailplayer',
-            title = 'Jail',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:jailplayer',
-            shouldClose = true
-        },
-        {
-            id = 'lawbadge',
-            title = 'Badge On/Off',
-            icon = 'id-badge',
-            type = 'command',
-            event = 'lawbadge',
-            shouldClose = true
-        },
-        {
-            id = 'lawmdt',
-            title = 'Law MDT',
-            icon = 'book-open',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        },
-    },
-    ['strlaw'] = {
-        {
-            id = 'policebutton',
-            title = 'Emergency Button',
-            icon = 'exclamation',
-            type = 'client',
-            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
-            shouldClose = true
-        },
-        {
-            id = 'handcuff',
-            title = 'Cuff',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:cuffplayer',
-            shouldClose = true
-        },
-        {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
-            type = 'client',
-            event = 'rsg-lawman:client:escortplayer',
-            shouldClose = true
-        },
-        {
-            id = 'jailplayer',
-            title = 'Jail',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:jailplayer',
-            shouldClose = true
-        },
-        {
-            id = 'lawbadge',
-            title = 'Badge On/Off',
-            icon = 'id-badge',
-            type = 'command',
-            event = 'lawbadge',
-            shouldClose = true
-        },
-        {
-            id = 'lawmdt',
-            title = 'Law MDT',
-            icon = 'book-open',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        },
-    },
-    ['stdenlaw'] = {
-        {
-            id = 'policebutton',
-            title = 'Emergency Button',
-            icon = 'exclamation',
-            type = 'client',
-            event = 'rsg-radialmenu:client:SendLawmanEmergencyAlert',
-            shouldClose = true
-        },
-        {
-            id = 'handcuff',
-            title = 'Cuff',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:cuffplayer',
-            shouldClose = true
-        },
-        {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
-            type = 'client',
-            event = 'rsg-lawman:client:escortplayer',
-            shouldClose = true
-        },
-        {
-            id = 'jailplayer',
-            title = 'Jail',
-            icon = 'user-lock',
-            type = 'client',
-            event = 'rsg-lawman:client:jailplayer',
-            shouldClose = true
-        },
-        {
-            id = 'lawbadge',
-            title = 'Badge On/Off',
-            icon = 'id-badge',
-            type = 'command',
-            event = 'lawbadge',
-            shouldClose = true
-        },
-        {
-            id = 'lawmdt',
-            title = 'Law MDT',
-            icon = 'book-open',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        },
+    medic = {
+        cl('medicbutton', locale('job_emergency'),     'exclamation', 'rsg-radialmenu:client:SendMedicEmergencyAlert'),
+        cl('revivep',     locale('medic_revive'),      'user-doctor', 'rsg-medic:client:RevivePlayer'),
+        cl('treatwounds', locale('medic_treat'),       'bandage',     'rsg-medic:client:TreatWounds'),
     },
 }
+
+for job in pairs(Config.LawJobs) do
+    Config.JobInteractions[job] = LawItems
+end

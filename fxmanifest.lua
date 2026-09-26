@@ -3,7 +3,12 @@ game 'rdr3'
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
 description 'rsg-radialmenu'
-version '1.1.5'
+version '2.0.0'
+
+shared_scripts {
+    '@ox_lib/init.lua',
+    'config.lua',
+}
 
 client_scripts {
     'client/main.lua',
@@ -12,17 +17,13 @@ client_scripts {
 
 server_scripts {
     'server/server.lua',
-    'server/versionchecker.lua'
-}
-
-shared_scripts {
-    'config.lua',
-    '@ox_lib/init.lua'
+    'server/versionchecker.lua',
 }
 
 ui_page 'html/index.html'
 
 files {
+    'locales/*.json',
     'html/index.html',
     'html/css/main.css',
     'html/js/main.js',
@@ -31,8 +32,7 @@ files {
 
 dependencies {
     'rsg-core',
-    'rsg-essentials',
-    'ox_lib'
+    'ox_lib',
 }
 
 lua54 'yes'

@@ -1,50 +1,38 @@
 'use strict';
 
-var RSGRadialMenu = null;
+const RESOURCE = typeof GetParentResourceName === 'function' ? GetParentResourceName() : 'rsg-radialmenu';
 
-$(document).ready(function(){
-    window.addEventListener('message', function(event){
-        switch (event.data.action) {
-            case "ui":
-                if (event.data.radial) {
-                    createMenu(event.data.items)
-                    RSGRadialMenu.open();
-                } else {
-                    RSGRadialMenu.close(true);
-                }
-        }
-    });
-});
-
-function createMenu(items) {
-    RSGRadialMenu = new RadialMenu({
-        parent      : document.body,
-        size        : 375,
-        menuItems   : items,
-        onClick     : function(item) {
-            if (item.shouldClose) {
-                RSGRadialMenu.close(true);
-            }
-            
-            if (item.items == null && item.shouldClose != null) {
-                $.post('https://rsg-radialmenu/selectItem', JSON.stringify({
-                    itemData: item
-                }))
-            }
-        }
-    });
+function post(name, data) {
+    return fetch(`https://${RESOURCE}/${name}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+        body: JSON.stringify(data || {}),
+    }).catch(() => {});
 }
 
-// Close on escape pressed
-$(document).on('keydown', function(e) {
-    switch(e.key) {
-        case "Escape":
-            RSGRadialMenu.close();
-            break;
+const menu = new RadialMenu({
+    parent: document.body,
+    size: 375,
+    onClose: () => post('closeRadial'),
+    onClick: (item) => {
+        if (item.items) return; // submenu, handled by RadialMenu
+        if (item.shouldClose !== false) menu.close();
+        post('selectItem', { itemData: { id: item.id, event: item.event } });
+    },
+});
+
+window.addEventListener('message', (event) => {
+    const data = event.data;
+    if (!data || data.action !== 'ui') return;
+    if (data.radial) {
+        menu.setItems(Array.isArray(data.items) ? data.items : []);
+        menu.open();
+    } else {
+        menu.close();
     }
 });
 
-// Close on any key up, hold/release support incase user changes keybind on the fivem side
-$(document).on('keyup', function(e) {
-    RSGRadialMenu.close();
+// hold-to-open: any key release closes the menu (keybind may be changed server side)
+document.addEventListener('keyup', (e) => {
+    if (e.key !== 'Escape' && e.key !== 'Backspace' && !/^[1-9]$/.test(e.key)) menu.close();
 });
